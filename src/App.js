@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Markdown editor</h1>
+      <h1 className='heading'>Markdown editor</h1>
       <div className='grid'>
         <Input markdown={markdown} handleChange={handleChange} />
         <Preview markdown={markdown} />

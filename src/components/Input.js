@@ -5,6 +5,7 @@ const Input = ({ markdown, handleChange }) => {
     <div className='grid-item'>
       <Title title='Input' />
       <textarea
+        className='textarea'
         value={markdown}
         placeholder='Type your markdown'
         onChange={handleChange}
