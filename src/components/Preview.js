@@ -5,7 +5,9 @@ const Preview = ({ markdown }) => {
   return (
     <div className='grid-item'>
       <Title title='Output' />
-      <ReactMarkdown children={markdown} />
+      <div id='preview'>
+        <ReactMarkdown children={markdown} />
+      </div>
     </div>
   );
 };
