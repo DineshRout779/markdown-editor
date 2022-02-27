@@ -1,10 +1,24 @@
-import "./styles.css";
-import ReactMarkdown from 'react-markdown'
+import './styles.css';
+import { useState } from 'react';
+import Input from './components/Input';
+import Preview from './components/Preview';
 
 const App = () => {
+  const [markdown, setMarkdown] = useState('## Type something...');
+
+  const handleChange = (e) => {
+    setMarkdown(e.target.value);
+  };
+
   return (
-    <div></div>
+    <div>
+      <h1>Markdown editor</h1>
+      <div className='grid'>
+        <Input markdown={markdown} handleChange={handleChange} />
+        <Preview markdown={markdown} />
+      </div>
+    </div>
   );
 };
 
-module.exports = App;
+export default App;
