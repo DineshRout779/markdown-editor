@@ -1,4 +1,49 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+h1 {
   text-align: center;
+  margin: 0.5em 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 100vh;
+  border-top: 1px solid #e9dada;
+}
+
+.grid-item {
+  min-height: 100%;
+  padding: 1em;
+}
+
+.grid-item + .grid-item {
+  border-left: 1px solid #e9dada;
+}
+
+textarea {
+  font-size: 1em;
+  width: 100%;
+  display: block;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.tab {
+  width: fit-content;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  color: rgb(102, 168, 255);
+  background-color: rgb(245, 239, 239);
+  border-radius: 4px;
 }
