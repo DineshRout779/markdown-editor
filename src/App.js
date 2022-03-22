@@ -1,9 +1,11 @@
-import './styles.css';
-import { useState } from 'react';
-import Input from './components/Input';
-import Preview from './components/Preview';
+import "./styles.css";
+import { useEffect, useState } from "react";
+import Input from "./components/Input";
+import Preview from "./components/Preview";
+import Loader from "./components/Loader";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [markdown, setMarkdown] = useState(`
   # Welcome to my React Markdown Previewer!
   ## This is a sub-heading...
@@ -51,13 +53,25 @@ const App = () => {
     setMarkdown(e.target.value);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div>
-      <h1 className='heading'>Markdown editor</h1>
-      <div className='grid'>
-        <Input markdown={markdown} handleChange={handleChange} />
-        <Preview markdown={markdown} />
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <h1 className="heading">Markdown editor</h1>
+          <div className="grid">
+            <Input markdown={markdown} handleChange={handleChange} />
+            <Preview markdown={markdown} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
